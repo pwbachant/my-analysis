@@ -50,16 +50,16 @@ stages:
       nfiles: 3
     - path: paper/main.tex
       hash: md5
-      md5: a4abce0cbde699cdeb3e9dafe9a78e8e
-      size: 1191
+      md5: ac89cc0c6a1e64d86b92998caa4642bb
+      size: 1293
     - path: paper/references.bib
       hash: md5
       md5: 2fc1994a416f2c333bb576ad351f0fce
       size: 5856
     - path: paper/results.tex
       hash: md5
-      md5: c4afb9bd1314260aac3d6d3620a3d27b
-      size: 600
+      md5: 8f14868576539899ac57ba9f4d115179
+      size: 594
     - path: paper/tables
       hash: md5
       md5: b32e5a53ec3060a43cf67f479343b2f6.dir
@@ -68,8 +68,8 @@ stages:
     outs:
     - path: paper/main.pdf
       hash: md5
-      md5: 01b24b0c3c83953e3bb6aef149a18660
-      size: 540678
+      md5: b6c0075f243d94a44a6f6e77085d5467
+      size: 541265
   map-paths:
     cmd: calkit map-paths --dir-to-dir-merge 'figures->paper/figures' 
       --dir-to-dir-merge 'tables->paper/tables'
@@ -95,3 +95,16 @@ stages:
       md5: b32e5a53ec3060a43cf67f479343b2f6.dir
       size: 964
       nfiles: 1
+  results-to-tex:
+    cmd: "calkit latex from-json 'results/vif.json' --output 'paper/results.tex' --format-json
+      '{\"bill_length_mm\": \"{bill_length_mm:.3f}\"}'"
+    deps:
+    - path: results/vif.json
+      hash: md5
+      md5: 66a5efa55e7040c700acbd6922c360f3
+      size: 157
+    outs:
+    - path: paper/results.tex
+      hash: md5
+      md5: 8f14868576539899ac57ba9f4d115179
+      size: 594

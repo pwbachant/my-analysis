@@ -39,6 +39,14 @@ pipeline:
         - src: tables
           dest: paper/tables
           kind: dir-to-dir-merge
+    results-to-tex:
+      kind: json-to-latex
+      inputs:
+        - results/vif.json
+      outputs:
+        - paper/results.tex
+      format:
+        bill_length_mm: "{bill_length_mm:.3f}"
     build-paper:
       kind: latex
       target_path: paper/main.tex
