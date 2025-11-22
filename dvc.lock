@@ -50,8 +50,8 @@ stages:
       nfiles: 3
     - path: paper/main.tex
       hash: md5
-      md5: 4c6cdec68f5e5c09bd1db7bad96b19cb
-      size: 1148
+      md5: a4abce0cbde699cdeb3e9dafe9a78e8e
+      size: 1191
     - path: paper/references.bib
       hash: md5
       md5: 2fc1994a416f2c333bb576ad351f0fce
@@ -68,5 +68,5 @@ stages:
     outs:
     - path: paper/main.pdf
       hash: md5
-      md5: 1a044fc90090b54d75860df76fec5037
-      size: 540469
+      md5: 93145251ad8310c6ea715f7fe0cb56f5
+      size: 540686
