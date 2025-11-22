@@ -30,6 +30,15 @@ pipeline:
           storage: git
         - path: results/vif.json
           storage: git
+    map-paths:
+      kind: map-paths
+      paths:
+        - src: figures
+          dest: paper/figures
+          kind: dir-to-dir-merge
+        - src: tables
+          dest: paper/tables
+          kind: dir-to-dir-merge
     build-paper:
       kind: latex
       target_path: paper/main.tex

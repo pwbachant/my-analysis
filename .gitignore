@@ -213,3 +213,11 @@ __marimo__/
 *.DS_Store
 
 .calkit/overleaf/
+
+paper/figures/regplot.png
+
+paper/figures/pairplot.png
+
+paper/figures/residuals-histogram.png
+
+paper/tables/ols-summary.tex
