@@ -8,10 +8,10 @@ environments:
   main:
     kind: uv
     path: pyproject.toml
-
   tex:
     kind: docker
     image: texlive/texlive:latest-full
+
 pipeline:
   stages:
     run-main-notebook:
@@ -30,7 +30,6 @@ pipeline:
           storage: git
         - path: results/vif.json
           storage: git
-
     build-paper:
       kind: latex
       target_path: paper/main.tex
@@ -40,6 +39,7 @@ pipeline:
         - paper/results.tex
         - paper/figures
         - paper/tables
+
 notebooks:
   - path: notebooks/main.ipynb
     title: Main notebook
