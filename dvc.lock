@@ -10,8 +10,8 @@ stages:
       size: 84845
     - path: data/raw/penguins.csv
       hash: md5
-      md5: 15d47d23d10f2f2f842439a2abdb771d
-      size: 15010
+      md5: db0b2d4d5166afaf6cd09b3019632efa
+      size: 15138
     - path: uv.lock
       hash: md5
       md5: 2279fd3dc518c2c475923e43d7c58340
@@ -19,20 +19,20 @@ stages:
     outs:
     - path: .calkit/notebooks/html/notebooks/main.html
       hash: md5
-      md5: ae49bb416c52daea77ea6fbbfc16e61c
-      size: 1463594
+      md5: 9dca7f6744938dbf5813c788b57ff840
+      size: 1469964
     - path: figures
       hash: md5
-      md5: 9803bc9358d932b865ead4fd1896b83b.dir
-      size: 1060619
+      md5: ed6c5fba0bb7926ff81e1ecc1b2261c7.dir
+      size: 1057633
       nfiles: 3
     - path: results/vif.json
       hash: md5
-      md5: 66a5efa55e7040c700acbd6922c360f3
-      size: 157
+      md5: 5740e5de652591681b962a12540e246d
+      size: 156
     - path: tables
       hash: md5
-      md5: b32e5a53ec3060a43cf67f479343b2f6.dir
+      md5: 3621643c622c2537e83509b7e7b407cd.dir
       size: 964
       nfiles: 1
   build-paper:
@@ -45,8 +45,8 @@ stages:
       nfiles: 1
     - path: paper/figures
       hash: md5
-      md5: 9803bc9358d932b865ead4fd1896b83b.dir
-      size: 1060619
+      md5: ed6c5fba0bb7926ff81e1ecc1b2261c7.dir
+      size: 1057633
       nfiles: 3
     - path: paper/main.tex
       hash: md5
@@ -58,41 +58,41 @@ stages:
       size: 5856
     - path: paper/results.tex
       hash: md5
-      md5: 8f14868576539899ac57ba9f4d115179
-      size: 594
+      md5: f10b38605686dd27e2bf8dc40b430360
+      size: 592
     - path: paper/tables
       hash: md5
-      md5: b32e5a53ec3060a43cf67f479343b2f6.dir
+      md5: 3621643c622c2537e83509b7e7b407cd.dir
       size: 964
       nfiles: 1
     outs:
     - path: paper/main.pdf
       hash: md5
-      md5: b6c0075f243d94a44a6f6e77085d5467
-      size: 541265
+      md5: 1e02ee651ab14227980878f39570c9b9
+      size: 543019
   map-paths:
     cmd: calkit map-paths --dir-to-dir-merge 'figures->paper/figures' 
       --dir-to-dir-merge 'tables->paper/tables'
     deps:
     - path: figures
       hash: md5
-      md5: 9803bc9358d932b865ead4fd1896b83b.dir
-      size: 1060619
+      md5: ed6c5fba0bb7926ff81e1ecc1b2261c7.dir
+      size: 1057633
       nfiles: 3
     - path: tables
       hash: md5
-      md5: b32e5a53ec3060a43cf67f479343b2f6.dir
+      md5: 3621643c622c2537e83509b7e7b407cd.dir
       size: 964
       nfiles: 1
     outs:
     - path: paper/figures
       hash: md5
-      md5: 9803bc9358d932b865ead4fd1896b83b.dir
-      size: 1060619
+      md5: ed6c5fba0bb7926ff81e1ecc1b2261c7.dir
+      size: 1057633
       nfiles: 3
     - path: paper/tables
       hash: md5
-      md5: b32e5a53ec3060a43cf67f479343b2f6.dir
+      md5: 3621643c622c2537e83509b7e7b407cd.dir
       size: 964
       nfiles: 1
   results-to-tex:
@@ -101,10 +101,10 @@ stages:
     deps:
     - path: results/vif.json
       hash: md5
-      md5: 66a5efa55e7040c700acbd6922c360f3
-      size: 157
+      md5: 5740e5de652591681b962a12540e246d
+      size: 156
     outs:
     - path: paper/results.tex
       hash: md5
-      md5: 8f14868576539899ac57ba9f4d115179
-      size: 594
+      md5: f10b38605686dd27e2bf8dc40b430360
+      size: 592
