@@ -211,3 +211,5 @@ __marimo__/
 .calkit/notebooks/executed/notebooks/main.ipynb
 
 *.DS_Store
+
+.calkit/overleaf/

@@ -9,6 +9,9 @@ environments:
     kind: uv
     path: pyproject.toml
 
+  tex:
+    kind: docker
+    image: texlive/texlive:latest-full
 pipeline:
   stages:
     run-main-notebook:
@@ -28,6 +31,15 @@ pipeline:
         - path: results/vif.json
           storage: git
 
+    build-paper:
+      kind: latex
+      target_path: paper/main.tex
+      environment: tex
+      inputs:
+        - paper/references.bib
+        - paper/results.tex
+        - paper/figures
+        - paper/tables
 notebooks:
   - path: notebooks/main.ipynb
     title: Main notebook
@@ -70,3 +82,11 @@ derived_from:
   project: calkit/example-analytics
   git_repo_url: https://github.com/calkit/example-analytics
   git_rev: d5895be42d9924d70c05816b0b470f03404e5091
+publications:
+  - path: paper/main.pdf
+    title: This is a paper about the analysis
+    description:
+    stage: build-paper
+overleaf_sync:
+  paper:
+    url: https://www.overleaf.com/project/691ca2644997ebdd1a3590bd
