@@ -57,6 +57,14 @@ pipeline:
         - paper/figures
         - paper/tables
 
+    plot-penguins:
+      kind: python-script
+      script_path: scripts/plot-penguins.py
+      environment: main
+      inputs:
+        - data/raw/penguins.csv
+      outputs:
+        - figures/penguins.png
 notebooks:
   - path: notebooks/main.ipynb
     title: Main notebook
@@ -86,6 +94,9 @@ figures:
     description: >
       A histogram of the residuals from the regression model.
 
+  - path: figures/penguins.png
+    title: Penguins are cool
+    stage: plot-penguins
 datasets:
   - path: data/raw/penguins.csv
     title: Palmer penguins
