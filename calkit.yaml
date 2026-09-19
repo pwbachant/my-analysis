@@ -65,6 +65,14 @@ pipeline:
         - data/raw/penguins.csv
       outputs:
         - figures/penguins.png
+    plot-penguins-2:
+      kind: python-script
+      script_path: scripts/plot-penguins-2.py
+      environment: main
+      inputs:
+        - data/raw/penguins.csv
+      outputs:
+        - figures/penguins-2.png
 notebooks:
   - path: notebooks/main.ipynb
     title: Main notebook
@@ -97,6 +105,9 @@ figures:
   - path: figures/penguins.png
     title: Penguins are cool
     stage: plot-penguins
+  - path: figures/penguins-2.png
+    title: Penguins 2
+    stage: plot-penguins-2
 datasets:
   - path: data/raw/penguins.csv
     title: Palmer penguins

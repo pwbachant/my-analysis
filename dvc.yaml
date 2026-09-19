@@ -68,3 +68,13 @@ stages:
       - figures/penguins.png
     desc: Automatically generated from the 'plot-penguins' stage in calkit.yaml. Changes
       made here will be overwritten.
+  plot-penguins-2:
+    cmd: calkit xenv -n main --no-check -- python scripts/plot-penguins-2.py
+    deps:
+      - scripts/plot-penguins-2.py
+      - data/raw/penguins.csv
+      - uv.lock
+    outs:
+      - figures/penguins-2.png
+    desc: Automatically generated from the 'plot-penguins-2' stage in calkit.yaml.
+      Changes made here will be overwritten.
