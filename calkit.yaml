@@ -46,7 +46,7 @@ pipeline:
       outputs:
         - paper/results.tex
       format:
-        bill_length_mm: "{bill_length_mm:.3f}"
+        bill_length_mm: '{bill_length_mm:.3f}'
     build-paper:
       kind: latex
       target_path: paper/main.tex
@@ -56,23 +56,6 @@ pipeline:
         - paper/results.tex
         - paper/figures
         - paper/tables
-
-    plot-penguins:
-      kind: python-script
-      script_path: scripts/plot-penguins.py
-      environment: main
-      inputs:
-        - data/raw/penguins.csv
-      outputs:
-        - figures/penguins.png
-    plot-penguins-2:
-      kind: python-script
-      script_path: scripts/plot-penguins-2.py
-      environment: main
-      inputs:
-        - data/raw/penguins.csv
-      outputs:
-        - figures/penguins-2.png
 notebooks:
   - path: notebooks/main.ipynb
     title: Main notebook
